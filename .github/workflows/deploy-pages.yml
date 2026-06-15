@@ -20,10 +20,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: .
-          exclude_assets: '.git,.github'
+      - name: Prepare static site
+        run: |
+          mkdir -p /tmp/site
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            ./ /tmp/site/
+
+      - name: Publish to gh-pages branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          rm -rf /tmp/gh-pages
+          git clone --branch gh-pages "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/gh-pages
+
+          rsync -av --delete --exclude='.git' /tmp/site/ /tmp/gh-pages/
+          cd /tmp/gh-pages
+          touch .nojekyll
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to deploy."
+            exit 0
+          fi
+
+          git commit -m "Deploy site from ${GITHUB_SHA}"
+          git push origin gh-pages
