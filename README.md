@@ -18,12 +18,21 @@ http://127.0.0.1:4173/
 
 ## Deploy to GitHub Pages
 
-1. Create a new GitHub repository.
-2. Upload all files in this folder to the repository root.
-3. Go to **Settings → Pages**.
-4. Set **Source** to `Deploy from a branch`.
-5. Choose branch `main` and folder `/root`.
-6. Save and wait for GitHub Pages to publish.
+This repository includes a GitHub Actions workflow at:
+
+```text
+.github/workflows/deploy-pages.yml
+```
+
+Every push to `main` deploys the static site to GitHub Pages.
+
+Public URL:
+
+```text
+https://softlumird-stack.github.io/ai-training/
+```
+
+If Pages is not enabled yet, go to **Settings → Pages** and set the source to **GitHub Actions**.
 
 ## Files
 
