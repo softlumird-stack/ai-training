@@ -63,6 +63,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -71,6 +72,7 @@ body {
   font-family: var(--font-brand);
   background: var(--lumi-pale);
   letter-spacing: 0;
+  overflow-x: hidden;
 }
 
 button,
@@ -381,12 +383,13 @@ h1 {
   color: var(--ink);
   font-size: clamp(48px, 7vw, 92px);
   font-weight: 900;
-  line-height: 0.92;
+  line-height: 1.06;
 }
 
 .cover-title span {
   display: block;
   white-space: nowrap;
+  line-height: 1.02;
 }
 
 .cover-title span:nth-child(2) {
@@ -402,7 +405,7 @@ h2 {
   color: var(--lumi);
   font-size: clamp(32px, 4.8vw, 62px);
   font-weight: 900;
-  line-height: 0.94;
+  line-height: 1.12;
   text-transform: uppercase;
 }
 
@@ -410,7 +413,7 @@ h3 {
   color: var(--ink);
   font-size: clamp(20px, 2vw, 28px);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.14;
 }
 
 .lead {
@@ -465,7 +468,7 @@ h3 {
 .mindset-shift strong {
   color: currentColor;
   font-size: clamp(20px, 2.2vw, 30px);
-  line-height: 1.05;
+  line-height: 1.16;
 }
 
 .shift-arrow {
@@ -620,7 +623,7 @@ h3 {
   color: var(--lumi);
   font-size: clamp(42px, 5vw, 66px);
   font-weight: 900;
-  line-height: 0.95;
+  line-height: 1.05;
 }
 
 .kpi-card.compact strong {
@@ -772,7 +775,7 @@ h3 {
 .bar-ranking strong {
   color: var(--ink);
   font-size: clamp(18px, 2vw, 25px);
-  line-height: 1.05;
+  line-height: 1.2;
 }
 
 .bubble-map {
@@ -1184,7 +1187,7 @@ h3 {
 .thank-you h2 {
   color: var(--lumi);
   font-size: clamp(76px, 12vw, 170px);
-  line-height: 0.82;
+  line-height: 0.98;
   letter-spacing: 0;
   text-shadow:
     0 2px 0 #d7f1e6,
@@ -1226,6 +1229,7 @@ h3 {
 .final-statement h2 {
   color: var(--white);
   font-size: clamp(42px, 6vw, 78px);
+  line-height: 1.08;
 }
 
 .final-statement h2 + h2 {
@@ -1328,17 +1332,17 @@ h3 {
 
   h1 {
     font-size: clamp(42px, 12vw, 72px);
-    line-height: 0.9;
+    line-height: 1.08;
   }
 
   h2 {
     font-size: clamp(28px, 8.5vw, 46px);
-    line-height: 1;
+    line-height: 1.14;
   }
 
   h3 {
     font-size: clamp(20px, 5.5vw, 28px);
-    line-height: 1.08;
+    line-height: 1.18;
   }
 
   p,
@@ -1563,5 +1567,36 @@ h3 {
   .slide {
     min-height: 100vh;
     page-break-after: always;
+  }
+}
+
+/* Final typography guard: keep wrapped headings readable on every viewport. */
+h1,
+h2,
+h3,
+.mindset-shift strong,
+.ranking strong,
+.bar-ranking strong,
+.final-statement h2 {
+  line-height: 1.14;
+}
+
+.cover-title span {
+  line-height: 1.06;
+}
+
+.thank-you h2 {
+  line-height: 1;
+}
+
+@media (max-width: 960px) {
+  h1,
+  h2,
+  h3,
+  .mindset-shift strong,
+  .ranking strong,
+  .bar-ranking strong,
+  .final-statement h2 {
+    line-height: 1.18;
   }
 }
