@@ -215,17 +215,7 @@ a {
 }
 
 .slide::before {
-  content: counter(slideNo, decimal-leading-zero);
-  position: absolute;
-  z-index: 1;
-  left: clamp(22px, 3vw, 48px);
-  top: 104px;
-  width: auto;
-  color: rgba(0, 140, 79, 0.13);
-  background: transparent;
-  font-size: clamp(56px, 8vw, 112px);
-  font-weight: 900;
-  line-height: 0.8;
+  display: none;
 }
 
 .slide::after {
