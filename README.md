@@ -24,7 +24,7 @@ This repository includes a GitHub Actions workflow at:
 .github/workflows/deploy-pages.yml
 ```
 
-Every push to `main` deploys the static site to GitHub Pages.
+Every push to `main` deploys the static site to the `gh-pages` branch.
 
 Public URL:
 
@@ -32,7 +32,11 @@ Public URL:
 https://softlumird-stack.github.io/ai-training/
 ```
 
-If Pages is not enabled yet, go to **Settings → Pages** and set the source to **GitHub Actions**.
+If the site is not live yet, go to **Settings → Pages** and set:
+
+- **Source**: `Deploy from a branch`
+- **Branch**: `gh-pages`
+- **Folder**: `/root`
 
 ## Files
 
