@@ -227,17 +227,11 @@ a {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.82)),
-    url("ChatGPT Image 10_18_48 15 thg 6, 2026.png");
-  background-position: center;
-  background-size: cover, contain;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.68)),
+    url("Slide chung.png");
+  background-position: center center;
+  background-size: cover;
   background-repeat: no-repeat;
-}
-
-.slide:nth-child(n + 7)::after {
-  background-image:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.82)),
-    url("ChatGPT Image 10_18_41 15 thg 6, 2026.png");
 }
 
 .slide-inner {
@@ -1226,8 +1220,10 @@ h3 {
 
 .conclusion::after {
   background-image:
-    linear-gradient(90deg, rgba(0, 140, 79, 0.9), rgba(0, 91, 55, 0.72)),
-    url("ChatGPT Image 10_18_41 15 thg 6, 2026.png");
+    linear-gradient(90deg, rgba(0, 140, 79, 0.84), rgba(0, 91, 55, 0.58)),
+    url("Slide chung.png");
+  background-position: center center;
+  background-size: cover;
 }
 
 .thank-you {
