@@ -230,7 +230,8 @@ a {
     linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.82)),
     url("ChatGPT Image 10_18_48 15 thg 6, 2026.png");
   background-position: center;
-  background-size: cover;
+  background-size: cover, contain;
+  background-repeat: no-repeat;
 }
 
 .slide:nth-child(n + 7)::after {
@@ -779,22 +780,22 @@ h3 {
 }
 
 .next-talk-slide .section-heading {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .next-talk-slide h2 {
   white-space: nowrap;
-  font-size: clamp(26px, 3.35vw, 44px);
+  font-size: clamp(14px, 2.85vw, 38px);
   line-height: 1.14;
 }
 
 .next-talk-insight {
   display: grid;
-  grid-template-columns: 210px 1fr;
+  grid-template-columns: 190px 1fr;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 12px;
-  padding: 13px 18px;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
   border: 2px solid var(--lumi);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.82);
@@ -803,21 +804,21 @@ h3 {
 
 .next-talk-insight span {
   color: var(--lumi);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .next-talk-insight p {
   color: var(--ink);
-  font-size: clamp(14px, 1.12vw, 17px);
+  font-size: clamp(13px, 1.02vw, 16px);
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.18;
 }
 
 .next-talk-grid {
   display: grid;
-  grid-template-columns: 1.22fr 1fr 1fr;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
@@ -825,7 +826,7 @@ h3 {
 .next-talk-card {
   position: relative;
   min-height: 0;
-  padding: 14px 16px 13px;
+  padding: 13px 14px 12px;
   border: 2px solid rgba(0, 140, 79, 0.58);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.8);
@@ -833,61 +834,55 @@ h3 {
 }
 
 .next-talk-card.primary {
-  grid-row: span 2;
+  grid-column: span 2;
+  grid-row: span 1;
   background: linear-gradient(180deg, rgba(230, 246, 239, 0.94), rgba(255, 255, 255, 0.82));
   border-color: var(--lumi);
-}
-
-.next-talk-card .rank {
-  display: inline-grid;
-  width: 36px;
-  height: 28px;
-  place-items: center;
-  margin-bottom: 7px;
-  border-radius: 10px;
-  color: #fff;
-  background: var(--lumi);
-  font-size: 12px;
-  font-weight: 900;
 }
 
 .next-talk-card h3 {
   margin-bottom: 6px;
   color: var(--lumi-deep);
-  font-size: clamp(15px, 1.18vw, 19px);
+  font-size: clamp(14px, 1.1vw, 17px);
   line-height: 1.13;
 }
 
 .next-talk-card p {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   color: var(--lumi);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
 }
 
 .next-talk-card ul {
   display: grid;
-  gap: 3px;
+  gap: 2px;
   margin: 0;
   padding-left: 18px;
 }
 
 .next-talk-card li {
   color: var(--text);
-  font-size: clamp(11px, 0.88vw, 13.5px);
+  font-size: clamp(10.5px, 0.82vw, 12.5px);
   font-weight: 750;
-  line-height: 1.15;
+  line-height: 1.12;
 }
 
 .next-talk-card.split-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column: span 3;
   column-gap: 12px;
 }
 
-.next-talk-card.split-card h3,
-.next-talk-card.split-card .rank {
+.next-talk-card.split-card h3 {
   grid-column: 1 / -1;
+}
+
+.next-talk-grid .next-talk-card:nth-child(2),
+.next-talk-grid .next-talk-card:nth-child(3),
+.next-talk-grid .next-talk-card:nth-child(5) {
+  grid-column: span 2;
 }
 
 .bubble-map {
@@ -1279,6 +1274,7 @@ h3 {
   background-image:
     linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.52)),
     url("Slide 1.png");
+  background-size: cover;
 }
 
 .thank-you-inner {
@@ -1494,7 +1490,6 @@ h3 {
   .lead,
   #slide-2 .message-card p,
   #slide-4 .message-card p,
-  .next-talk-slide h2,
   #slide-5 h2,
   #slide-10 .conclusion-grid h3,
   .thanks-copy {
